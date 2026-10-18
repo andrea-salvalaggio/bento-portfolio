@@ -1,0 +1,9 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--color-page); font-family: var(--font-sans); }
+body { min-width: 320px; margin: 0; background: var(--color-page); color: var(--color-text); }
+button, input { font: inherit; }
+button { cursor: pointer; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
