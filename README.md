@@ -18,3 +18,15 @@ npm run dev
 - `public/images/`: sostituire i SVG segnaposto con asset ottimizzati.
 
 I progetti senza `projectUrl` restano volutamente non cliccabili; nessun link fittizio viene generato.
+
+## Convenzione dei commit
+
+Usare sempre il formato [Conventional Commits](https://www.conventionalcommits.org/it/v1.0.0/):
+
+```text
+<tipo>(<scope opzionale>): <descrizione imperativa e concisa>
+```
+
+Tipi ammessi: `feat`, `fix`, `refactor`, `style`, `docs`, `test`, `build`, `ci`, `chore` e `perf`.
+
+Esempio: `refactor(styles): migrate global styles to SCSS tokens`

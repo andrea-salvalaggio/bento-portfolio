@@ -1,0 +1,82 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.portfolio-page {
+  display: grid;
+  min-height: 100svh;
+  padding: clamp(16px, 5vw, 72px);
+  place-items: center;
+}
+
+.portfolio-shell {
+  width: min(100%, $layout-max-width);
+  padding: clamp(12px, 1.7vw, 20px);
+  background: $color-shell;
+  border: 1px solid $color-border-strong;
+  border-radius: $radius-shell;
+  box-shadow: 0 0 0 5px rgb(255 255 255 / 3%), 0 24px 80px rgb(0 0 0 / 24%);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-areas:
+    'intro intro intro intro intro projectA projectA projectA projectB projectB social social'
+    'intro intro intro intro intro projectA projectA projectA projectB projectB social social'
+    'profile about about about about projectC projectC projectC projectC projectC now now'
+    'profile about about about about projectC projectC projectC projectC projectC now now'
+    'stack stack stack utility contact contact contact contact contact contact contact contact';
+  gap: $space-grid;
+}
+
+.area-intro { grid-area: intro; }
+.area-project-a { grid-area: projectA; }
+.area-project-b { grid-area: projectB; }
+.area-social { grid-area: social; }
+.area-profile { grid-area: profile; }
+.area-about { grid-area: about; }
+.area-project-c { grid-area: projectC; }
+.area-now { grid-area: now; }
+.area-stack { grid-area: stack; }
+.area-utility { grid-area: utility; }
+.area-contact { grid-area: contact; }
+
+@include tablet-down {
+  .bento-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-areas:
+      'intro intro intro projectA projectA projectA'
+      'intro intro intro projectB projectB projectB'
+      'profile about about about social social'
+      'projectC projectC projectC projectC now now'
+      'stack stack stack utility contact contact';
+  }
+}
+
+@include mobile-down {
+  .portfolio-page {
+    padding: 12px;
+    place-items: start center;
+  }
+
+  .portfolio-shell {
+    padding: 10px;
+    border-radius: 26px;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'intro'
+      'projectA'
+      'projectB'
+      'about'
+      'profile'
+      'projectC'
+      'stack'
+      'social'
+      'now'
+      'utility'
+      'contact';
+  }
+}

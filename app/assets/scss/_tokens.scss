@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+:root {
+  color-scheme: dark;
+
+  // CSS custom properties intentionally mirror SCSS variables. They keep values
+  // available to Tailwind arbitrary-value utilities at runtime.
+  --color-page: #{$color-page};
+  --color-shell: #{$color-shell};
+  --color-card: #{$color-card};
+  --color-card-hover: #{$color-card-hover};
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+  --color-text-subtle: #{$color-text-subtle};
+  --color-border: #{$color-border};
+  --color-border-strong: #{$color-border-strong};
+  --color-accent: #{$color-accent};
+  --font-sans: #{$font-sans};
+  --radius-card: #{$radius-card};
+  --radius-shell: #{$radius-shell};
+  --space-grid: #{$space-grid};
+  --layout-max-width: #{$layout-max-width};
+  --transition-fast: #{$transition-fast};
+  --transition-normal: #{$transition-normal};
+}

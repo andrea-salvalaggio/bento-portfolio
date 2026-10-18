@@ -1,0 +1,11 @@
+// SCSS defines design tokens and shared component rules.
+// Tailwind remains responsible for local layout and responsive utility classes.
+@use 'tokens';
+@use 'base';
+@use 'layout';
+@use 'components';
+@use 'utilities';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

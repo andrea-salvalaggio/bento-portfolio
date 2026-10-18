@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   components: [
     { path: '~/components', pathPrefix: false },
   ],
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/scss/main.scss'],
   app: {
     head: {
       htmlAttrs: { lang: 'it' },
