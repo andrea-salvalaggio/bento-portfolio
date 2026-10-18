@@ -1,32 +1,36 @@
 # Bento Portfolio
 
-Scaffolding Nuxt 3 + Vue 3 + Tailwind CSS per un portfolio dark in stile Bento Grid.
+Dark-only personal portfolio for a Web & Frontend Developer, built as a responsive **Bento Grid** composition. The project prioritizes visual hierarchy, readability, reusable components, and a simple foundation to customize.
 
-## Avvio
+## Features
+
+- Asymmetrical homepage grid optimized for desktop, tablet, and mobile.
+- Centralized design system with SCSS tokens and CSS custom properties.
+- Accessible, reusable Vue components for intro, projects, stack, social links, and contact.
+- Typed content separated from the UI.
+- Copy-email action with accessible feedback and a `mailto:` fallback.
+- Essential SEO, `prefers-reduced-motion` support, and local placeholder images.
+
+## Stack
+
+- [Nuxt 3](https://nuxt.com/) + [Vue 3](https://vuejs.org/) + TypeScript
+- [Tailwind CSS](https://tailwindcss.com/) for local utilities and responsive styling
+- SCSS (`sass`) for tokens, mixins, layout, and shared UI patterns
+- [Lucide](https://lucide.dev/) for icons
+- Vercel as the deployment target
+
+## Getting started
+
+### Requirements
+
+- Node.js 20 or later
+- npm 10 or later
+
+### Installation
 
 ```bash
+git clone <your-repository-url>
+cd bento-portfolio
 npm install
 npm run dev
 ```
-
-## Contenuti da personalizzare
-
-- `app/data/profile.ts`: nome, email, testo, disponibilità e ritratto.
-- `app/data/projects.ts`: progetti, URL, immagini e tag.
-- `app/data/socials.ts`: aggiungere solo profili reali.
-- `app/data/stack.ts`: strumenti effettivamente dichiarabili.
-- `public/images/`: sostituire i SVG segnaposto con asset ottimizzati.
-
-I progetti senza `projectUrl` restano volutamente non cliccabili; nessun link fittizio viene generato.
-
-## Convenzione dei commit
-
-Usare sempre il formato [Conventional Commits](https://www.conventionalcommits.org/it/v1.0.0/):
-
-```text
-<tipo>(<scope opzionale>): <descrizione imperativa e concisa>
-```
-
-Tipi ammessi: `feat`, `fix`, `refactor`, `style`, `docs`, `test`, `build`, `ci`, `chore` e `perf`.
-
-Esempio: `refactor(styles): migrate global styles to SCSS tokens`
