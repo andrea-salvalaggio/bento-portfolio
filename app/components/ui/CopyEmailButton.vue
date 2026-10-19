@@ -8,7 +8,7 @@ const message = computed(() => status.value === 'success' ? 'Email copiata' : st
 
 <template>
   <div>
-    <button type="button" class="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-text)] px-4 font-medium text-[var(--color-shell)] transition hover:bg-white" @click="copy(props.email)">
+    <button type="button" class="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-text)] px-4 font-medium text-[var(--color-page)] transition hover:bg-white" @click="copy(props.email)">
       <Check v-if="status === 'success'" :size="18" aria-hidden="true" />
       <X v-else-if="status === 'error'" :size="18" aria-hidden="true" />
       <Clipboard v-else :size="18" aria-hidden="true" />

@@ -3,27 +3,21 @@
 
 .portfolio-page {
   display: grid;
-  min-height: 100svh;
-  padding: clamp(16px, 5vw, 72px);
+  height: 100dvh;
+  overflow: clip;
+  padding: clamp(24px, 5dvh, 72px) clamp(16px, 4vw, 64px);
   place-items: center;
 }
 
-.portfolio-shell {
-  width: min(100%, $layout-max-width);
-  padding: clamp(12px, 1.7vw, 20px);
-  background: $color-shell;
-  border: 1px solid $color-border-strong;
-  border-radius: $radius-shell;
-  box-shadow: 0 0 0 5px rgb(255 255 255 / 3%), 0 24px 80px rgb(0 0 0 / 24%);
-}
-
 .bento-grid {
+  width: min(100%, $layout-max-width);
+  height: 100%;
+  min-height: 0;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1.25fr) minmax(0, 1.1fr) minmax(0, 0.9fr);
   grid-template-areas:
     'intro intro intro intro intro projectA projectA projectA projectB projectB social social'
-    'intro intro intro intro intro projectA projectA projectA projectB projectB social social'
-    'profile about about about about projectC projectC projectC projectC projectC now now'
     'profile about about about about projectC projectC projectC projectC projectC now now'
     'stack stack stack utility contact contact contact contact contact contact contact contact';
   gap: $space-grid;
@@ -41,9 +35,28 @@
 .area-utility { grid-area: utility; }
 .area-contact { grid-area: contact; }
 
+@media (min-width: $breakpoint-tablet + 1px) {
+  .bento-grid > .bento-card {
+    min-height: 0;
+  }
+
+  .area-profile img {
+    min-height: 0;
+  }
+}
+
 @include tablet-down {
+  .portfolio-page {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    padding: clamp(16px, 5vw, 72px);
+  }
+
   .bento-grid {
+    height: auto;
     grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: none;
     grid-template-areas:
       'intro intro intro projectA projectA projectA'
       'intro intro intro projectB projectB projectB'
@@ -57,11 +70,6 @@
   .portfolio-page {
     padding: 12px;
     place-items: start center;
-  }
-
-  .portfolio-shell {
-    padding: 10px;
-    border-radius: 26px;
   }
 
   .bento-grid {
