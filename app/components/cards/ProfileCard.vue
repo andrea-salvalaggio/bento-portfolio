@@ -4,7 +4,7 @@ defineProps<{ profile: PortfolioProfile }>()
 </script>
 
 <template>
-  <BentoCard class="area-profile min-h-72">
-    <img v-if="profile.profileImage" :src="profile.profileImage" class="h-full min-h-72 w-full object-cover" alt="Ritratto segnaposto da sostituire" width="560" height="700">
+  <BentoCard class="area-profile">
+    <img v-if="profile.profileImage" :src="profile.profileImage" class="card-image" :alt="`Ritratto di ${profile.name} (segnaposto)`" width="600" height="600">
   </BentoCard>
 </template>

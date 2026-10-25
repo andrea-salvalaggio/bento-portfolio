@@ -1,5 +1,7 @@
 <template>
   <main class="portfolio-page">
-    <slot />
+    <div class="portfolio-frame">
+      <slot />
+    </div>
   </main>
 </template>

@@ -2,89 +2,157 @@
 @use 'variables' as *;
 
 .portfolio-page {
-  display: grid;
-  height: 100dvh;
-  overflow: clip;
-  padding: clamp(24px, 5dvh, 72px) clamp(16px, 4vw, 64px);
-  place-items: center;
+    --page-pad: clamp(0.75rem, 3vw, 3rem);
+
+    display: grid;
+    min-height: 100dvh;
+    padding: var(--page-pad);
+    place-items: center;
+}
+
+.portfolio-frame {
+    width: min(100%, $layout-max-width);
+    height: calc(100dvh - var(--page-pad) * 2);
+    min-height: 44rem;
 }
 
 .bento-grid {
-  width: min(100%, $layout-max-width);
-  height: 100%;
-  min-height: 0;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 1.25fr) minmax(0, 1.1fr) minmax(0, 0.9fr);
-  grid-template-areas:
-    'intro intro intro intro intro projectA projectA projectA projectB projectB social social'
-    'profile about about about about projectC projectC projectC projectC projectC now now'
-    'stack stack stack utility contact contact contact contact contact contact contact contact';
-  gap: $space-grid;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(15, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr)) repeat(3, minmax(0, 0.7fr));
+    grid-template-areas:
+        'intro intro intro intro intro intro projectA projectA projectA projectB projectB projectB social social social'
+        'intro intro intro intro intro intro projectA projectA projectA projectB projectB projectB social social social'
+        'intro intro intro intro intro intro projectA projectA projectA projectB projectB projectB social social social'
+        'profile profile profile about about about about about projectC projectC projectC projectC portfolio portfolio portfolio'
+        'profile profile profile about about about about about projectC projectC projectC projectC portfolio portfolio portfolio'
+        'profile profile profile about about about about about projectC projectC projectC projectC portfolio portfolio portfolio'
+        'status status status status stack stack stack stack stack theme theme theme contact contact contact'
+        'status status status status stack stack stack stack stack theme theme theme contact contact contact'
+        'status status status status stack stack stack stack stack theme theme theme contact contact contact';
+    gap: $space-grid;
 }
 
-.area-intro { grid-area: intro; }
-.area-project-a { grid-area: projectA; }
-.area-project-b { grid-area: projectB; }
-.area-social { grid-area: social; }
-.area-profile { grid-area: profile; }
-.area-about { grid-area: about; }
-.area-project-c { grid-area: projectC; }
-.area-now { grid-area: now; }
-.area-stack { grid-area: stack; }
-.area-utility { grid-area: utility; }
-.area-contact { grid-area: contact; }
+.area-intro {
+    grid-area: intro;
+}
 
-@media (min-width: $breakpoint-tablet + 1px) {
-  .bento-grid > .bento-card {
-    min-height: 0;
-  }
+.area-project-a {
+    grid-area: projectA;
+}
 
-  .area-profile img {
-    min-height: 0;
-  }
+.area-project-b {
+    grid-area: projectB;
+}
+
+.area-social {
+    grid-area: social;
+}
+
+.area-profile {
+    grid-area: profile;
+}
+
+.area-about {
+    grid-area: about;
+}
+
+.area-project-c {
+    grid-area: projectC;
+}
+
+.area-portfolio {
+    grid-area: portfolio;
+}
+
+.area-status {
+    grid-area: status;
+}
+
+.area-stack {
+    grid-area: stack;
+}
+
+.area-theme {
+    grid-area: theme;
+}
+
+.area-contact {
+    grid-area: contact;
 }
 
 @include tablet-down {
-  .portfolio-page {
-    height: auto;
-    min-height: 100dvh;
-    overflow: visible;
-    padding: clamp(16px, 5vw, 72px);
-  }
+    .portfolio-frame {
+        height: auto;
+        min-height: 0;
+    }
 
-  .bento-grid {
-    height: auto;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-rows: none;
-    grid-template-areas:
-      'intro intro intro projectA projectA projectA'
-      'intro intro intro projectB projectB projectB'
-      'profile about about about social social'
-      'projectC projectC projectC projectC now now'
-      'stack stack stack utility contact contact';
-  }
+    .bento-grid {
+        height: auto;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: none;
+        grid-auto-rows: auto;
+        grid-template-areas:
+            'intro intro intro intro intro intro'
+            'projectA projectA projectA projectB projectB projectB'
+            'profile profile about about about about'
+            'projectC projectC projectC portfolio portfolio portfolio'
+            'status status status stack stack stack'
+            'social social theme theme contact contact';
+        gap: $space-grid-compact;
+    }
+
+    .bento-grid>.bento-card {
+        min-height: 11rem;
+    }
+
+    .area-project-a,
+    .area-project-b,
+    .area-project-c {
+        aspect-ratio: 4 / 3;
+    }
 }
 
 @include mobile-down {
-  .portfolio-page {
-    padding: 12px;
-    place-items: start center;
-  }
+    .portfolio-page {
+        padding: 1rem;
+        place-items: start center;
+    }
 
-  .bento-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'intro'
-      'projectA'
-      'projectB'
-      'about'
-      'profile'
-      'projectC'
-      'stack'
-      'social'
-      'now'
-      'utility'
-      'contact';
-  }
+    .bento-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            'intro intro'
+            'projectA projectB'
+            'about about'
+            'profile projectC'
+            'social social'
+            'portfolio portfolio'
+            'status status'
+            'stack stack'
+            'contact contact'
+            'theme theme';
+    }
+
+    .bento-grid>.bento-card {
+        min-height: 9rem;
+    }
+
+    .area-project-a,
+    .area-project-b,
+    .area-project-c,
+    .area-profile {
+        aspect-ratio: 1;
+        min-height: 0;
+    }
+
+    .area-theme {
+        min-height: 6.5rem;
+    }
+
+    .bento-grid>.area-portfolio {
+        min-height: 12rem;
+    }
 }

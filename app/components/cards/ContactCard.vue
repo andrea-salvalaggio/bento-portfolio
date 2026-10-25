@@ -4,10 +4,8 @@ defineProps<{ profile: PortfolioProfile }>()
 </script>
 
 <template>
-  <BentoCard id="contact" class="area-contact min-h-44 p-7 sm:p-8">
-    <div class="grid h-full gap-6 md:grid-cols-[1fr_minmax(210px,280px)] md:items-end">
-      <div><CardLabel text="CONTATTI" /><h2 class="max-w-md text-[clamp(1.6rem,3vw,2.5rem)] font-medium leading-tight tracking-[-.045em]">Hai un progetto da realizzare?</h2></div>
-      <CopyEmailButton :email="profile.email" />
-    </div>
+  <BentoCard id="contact" class="area-contact card-pad flex flex-col justify-center gap-4">
+    <h2 class="text-[clamp(1.15rem,8cqi,1.75rem)] font-normal leading-snug tracking-[-.02em]">Hai un progetto in mente?</h2>
+    <CopyEmailButton :email="profile.email" />
   </BentoCard>
 </template>

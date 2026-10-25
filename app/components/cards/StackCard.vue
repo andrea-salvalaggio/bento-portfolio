@@ -4,9 +4,13 @@ defineProps<{ stack: StackItem[] }>()
 </script>
 
 <template>
-  <BentoCard class="area-stack min-h-44 p-7 sm:p-8">
-    <CardLabel text="STACK" />
-    <h2 class="mb-5 text-xl font-medium tracking-[-.03em]">Strumenti che uso</h2>
-    <ul class="flex flex-wrap gap-2" aria-label="Tecnologie e strumenti"><li v-for="item in stack" :key="item.name"><TechBadge :item="item" /></li></ul>
+  <BentoCard class="area-stack card-pad flex flex-col justify-between gap-4">
+    <h2 class="text-[clamp(1.5rem,8cqi,2.5rem)] font-normal leading-tight tracking-[-.03em]">Stack che uso</h2>
+    <div class="stack-marquee" role="group" aria-label="Tecnologie e strumenti">
+      <ul class="stack-track">
+        <li v-for="item in stack" :key="item.name"><TechBadge :item="item" /></li>
+        <li v-for="item in stack" :key="`${item.name}-copy`" aria-hidden="true"><TechBadge :item="item" decorative /></li>
+      </ul>
+    </div>
   </BentoCard>
 </template>

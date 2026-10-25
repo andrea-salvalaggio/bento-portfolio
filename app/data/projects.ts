@@ -1,6 +1,5 @@
 import type { PortfolioProject } from '~/types/project'
 
-// Replace the preview images, copy and URLs with real project data.
 export const projects: PortfolioProject[] = [
   {
     id: 'placeholder-a', slug: 'progetto-a', title: 'Progetto A',

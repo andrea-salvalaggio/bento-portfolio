@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { aboutText, nowItem, profile } from '~/data/profile'
+import { aboutText, mainPortfolio, profile } from '~/data/profile'
 import { projects } from '~/data/projects'
 import { socials } from '~/data/socials'
 import { stack } from '~/data/stack'
 
 useSeoMeta({
-  title: 'Portfolio | Web & Frontend Designer',
-  description: 'Portfolio personale di un Web & Frontend Designer. Contenuti in fase di personalizzazione.',
-  ogTitle: 'Portfolio | Web & Frontend Designer',
+  title: 'Andrea Salvalaggio | Web & Frontend Developer',
+  description: 'Portfolio di Andrea Salvalaggio, Web & Frontend Developer: interfacce curate e frontend responsive.',
+  ogTitle: 'Andrea Salvalaggio | Web & Frontend Developer',
   ogDescription: 'Interfacce curate e frontend responsive.',
   ogType: 'website',
 })
@@ -23,9 +23,10 @@ useSeoMeta({
       <ProfileCard :profile="profile" />
       <AboutCard :text="aboutText" />
       <ProjectCard :project="projects[2]" area-class="area-project-c" />
-      <ResourcesCard v-bind="nowItem" />
+      <PortfolioCard v-bind="mainPortfolio" />
+      <StatusCard :availability="profile.availability" :location="profile.location" />
       <StackCard :stack="stack" />
-      <UtilityCard :availability="profile.availability" />
+      <ThemeCard />
       <ContactCard :profile="profile" />
     </PortfolioGrid>
   </PortfolioShell>

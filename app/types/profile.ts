@@ -11,10 +11,11 @@ export interface PortfolioProfile {
 export interface SocialLink {
   label: string
   url: string
-  icon: 'github' | 'linkedin' | 'instagram' | 'dribbble'
+  icon: 'github' | 'linkedin' | 'instagram' | 'mail'
 }
 
 export interface StackItem {
   name: string
-  detail: string
+  path: string
+  hex: string
 }
