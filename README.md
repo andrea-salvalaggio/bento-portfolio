@@ -1,6 +1,6 @@
 # Bento Portfolio
 
-Dark-only personal portfolio for a Web & Frontend Developer, built as a responsive **Bento Grid** composition. The project prioritizes visual hierarchy, readability, reusable components, and a simple foundation to customize.
+Personal portfolio for a Web & Frontend Developer, built as a responsive **Bento Grid** composition. The project prioritizes visual hierarchy, readability, reusable components, and a simple foundation to customize.
 
 ## Features
 
