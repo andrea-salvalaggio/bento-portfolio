@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ArrowUpRight } from 'lucide-vue-next'
 import { faGithub, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import type { SocialLink } from '~/types/profile'
@@ -13,5 +14,6 @@ const external = computed(() => !props.item.url.startsWith('mailto:'))
   <a :href="item.url" class="social-tile" :target="external ? '_blank' : undefined" :rel="external ? 'noopener noreferrer' : undefined">
     <svg :viewBox="`0 0 ${glyph.icon[0]} ${glyph.icon[1]}`" fill="currentColor" aria-hidden="true"><path :d="String(glyph.icon[4])" /></svg>
     {{ item.label }}
+    <ArrowUpRight class="social-tile__arrow" :size="18" aria-hidden="true" />
   </a>
 </template>

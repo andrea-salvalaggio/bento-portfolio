@@ -132,8 +132,7 @@
             'portfolio portfolio'
             'status status'
             'stack stack'
-            'contact contact'
-            'theme theme';
+            'contact theme';
     }
 
     .bento-grid>.bento-card {
@@ -148,8 +147,8 @@
         min-height: 0;
     }
 
-    .area-theme {
-        min-height: 6.5rem;
+    .bento-grid>.area-status {
+        min-height: 16rem;
     }
 
     .bento-grid>.area-portfolio {

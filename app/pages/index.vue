@@ -6,9 +6,9 @@ import { stack } from '~/data/stack'
 
 useSeoMeta({
   title: 'Andrea Salvalaggio | Web & Frontend Developer',
-  description: 'Portfolio di Andrea Salvalaggio, Web & Frontend Developer: interfacce curate e frontend responsive.',
+  description: 'Portfolio of Andrea Salvalaggio, Web & Frontend Developer: polished interfaces and responsive frontends.',
   ogTitle: 'Andrea Salvalaggio | Web & Frontend Developer',
-  ogDescription: 'Interfacce curate e frontend responsive.',
+  ogDescription: 'Polished interfaces and responsive frontends.',
   ogType: 'website',
 })
 </script>
@@ -24,7 +24,7 @@ useSeoMeta({
       <AboutCard :text="aboutText" />
       <ProjectCard :project="projects[2]" area-class="area-project-c" />
       <PortfolioCard v-bind="mainPortfolio" />
-      <StatusCard :availability="profile.availability" :location="profile.location" />
+      <StatusCard :availability="profile.availability" :location="profile.location" :location-url="profile.locationUrl" />
       <StackCard :stack="stack" />
       <ThemeCard />
       <ContactCard :profile="profile" />

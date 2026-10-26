@@ -4,7 +4,7 @@ defineProps<{ socials: SocialLink[] }>()
 </script>
 
 <template>
-  <nav class="area-social social-grid" aria-label="Profili social">
+  <nav class="area-social social-grid" aria-label="Social profiles">
     <IconLink v-for="item in socials" :key="item.label" :item="item" />
   </nav>
 </template>

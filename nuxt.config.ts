@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   css: ['~/assets/scss/main.scss'],
   app: {
     head: {
-      htmlAttrs: { lang: 'it' },
+      htmlAttrs: { lang: 'en' },
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },

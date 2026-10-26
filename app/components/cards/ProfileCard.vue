@@ -5,6 +5,6 @@ defineProps<{ profile: PortfolioProfile }>()
 
 <template>
   <BentoCard class="area-profile">
-    <img v-if="profile.profileImage" :src="profile.profileImage" class="card-image" :alt="`Ritratto di ${profile.name} (segnaposto)`" width="600" height="600">
+    <img v-if="profile.profileImage" :src="profile.profileImage" class="card-image" :alt="`Portrait of ${profile.name} (placeholder)`" width="600" height="600">
   </BentoCard>
 </template>

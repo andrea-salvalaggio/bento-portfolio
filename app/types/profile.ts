@@ -4,6 +4,7 @@ export interface PortfolioProfile {
   introduction: string
   email: string
   location?: string
+  locationUrl?: string
   availability?: string
   profileImage?: string
 }
