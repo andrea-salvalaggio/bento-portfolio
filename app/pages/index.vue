@@ -5,9 +5,9 @@ import { socials } from '~/data/socials'
 import { stack } from '~/data/stack'
 
 useSeoMeta({
-  title: 'Andrea Salvalaggio | Web & Frontend Developer',
+  title: 'Bento Grid | Personal Portfolio',
   description: 'Portfolio of Andrea Salvalaggio, Web & Frontend Developer: polished interfaces and responsive frontends.',
-  ogTitle: 'Andrea Salvalaggio | Web & Frontend Developer',
+  ogTitle: 'Bento Grid | Personal Portfolio',
   ogDescription: 'Polished interfaces and responsive frontends.',
   ogType: 'website',
 })
