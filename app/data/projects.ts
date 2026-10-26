@@ -2,21 +2,21 @@ import type { PortfolioProject } from '~/types/project'
 
 export const projects: PortfolioProject[] = [
   {
-    id: 'placeholder-a', slug: 'project-a', title: 'Project A',
-    description: 'Project preview — content to be replaced.',
-    image: '/images/projects/project-a.svg', imageAlt: 'Abstract mockup of Project A',
+    id: 'discord', slug: 'discord', title: 'Discord',
+    description: 'Landing page inspired by Discord.',
+    image: '/images/projects/discord.png', imageAlt: 'Discord landing page shown on a laptop over a blue background',
     tags: ['UI design', 'Frontend'], featured: true,
   },
   {
-    id: 'placeholder-b', slug: 'project-b', title: 'Project B',
-    description: 'Project preview — content to be replaced.',
-    image: '/images/projects/project-b.svg', imageAlt: 'Abstract mockup of Project B',
-    tags: ['Web design'], featured: true,
+    id: 'whatsapp', slug: 'whatsapp', title: 'WhatsApp',
+    description: 'Chat interface inspired by WhatsApp Web.',
+    image: '/images/projects/whatsapp.png', imageAlt: 'Chat interface inspired by WhatsApp Web shown on a tablet over a green background',
+    tags: ['UI design', 'Frontend'], featured: true,
   },
   {
-    id: 'placeholder-c', slug: 'project-c', title: 'Project C',
-    description: 'Project preview — content to be replaced.',
-    image: '/images/projects/project-c.svg', imageAlt: 'Abstract mockup of Project C',
-    tags: ['Design system', 'Vue'], featured: true,
+    id: 'deliveboo', slug: 'deliveboo', title: 'Deliveboo',
+    description: 'Food delivery web app built with Laravel.',
+    image: '/images/projects/deliveboo.png', imageAlt: 'Deliveboo logo on an orange background with blurred food',
+    tags: ['Laravel', 'Full-stack'], projectUrl: 'https://github.com/andrea-salvalaggio/laravel-deliveboo', featured: true,
   },
 ]
