@@ -204,6 +204,10 @@
   background: linear-gradient(to top, rgb(0 0 0 / 65%), rgb(0 0 0 / 15%));
 }
 
+:root[data-theme='light'] .status-card::after {
+  background: linear-gradient(to top, rgb(255 255 255 / 75%), rgb(255 255 255 / 20%));
+}
+
 .status-card .project-link {
   z-index: 1;
 

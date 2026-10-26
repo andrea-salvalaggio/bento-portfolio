@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { MapPin } from 'lucide-vue-next'
+const { theme } = useTheme()
 const props = defineProps<{ availability?: string; location?: string; locationUrl?: string }>()
 const lines = computed(() => {
   const words = (props.availability || 'Availability to be updated').split(' ')
@@ -16,15 +17,15 @@ const lines = computed(() => {
 
 <template>
   <BentoCard class="area-status status-card" :interactive="Boolean(locationUrl)">
-    <img class="card-image" src="/images/map-padova.svg" alt="" width="800" height="600">
+    <img class="card-image" :src="theme === 'light' ? '/images/map-light.svg' : '/images/map-dark.svg'" alt="" width="800" height="600">
     <component
       :is="locationUrl ? 'a' : 'div'"
-      class="project-link card-pad absolute inset-0 flex flex-col justify-between gap-4 text-white"
+      class="project-link card-pad absolute inset-0 flex flex-col justify-between gap-4 text-[var(--color-text)]"
       v-bind="locationUrl ? { href: locationUrl, target: '_blank', rel: 'noopener noreferrer', 'aria-label': `Open ${location} in Apple Maps` } : {}"
     >
-      <div class="flex items-center gap-3"><span class="status-dot" aria-hidden="true" /><CardLabel text="Availability" class="!mb-0 !text-white/70" /></div>
+      <div class="flex items-center gap-3"><span class="status-dot" aria-hidden="true" /><CardLabel text="Availability" class="!mb-0 !text-[var(--color-text-muted)]" /></div>
       <h2 class="text-[clamp(1rem,6cqi,2.6rem)] font-normal leading-snug"><span v-for="line in lines" :key="line" class="block whitespace-nowrap">{{ line }}</span></h2>
-      <p v-if="location" class="flex items-center gap-2 text-sm text-white/80"><MapPin :size="15" aria-hidden="true" />{{ location }}</p>
+      <p v-if="location" class="flex items-center gap-2 text-sm text-[var(--color-text-muted)]"><MapPin :size="15" aria-hidden="true" />{{ location }}</p>
     </component>
   </BentoCard>
 </template>
