@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { PortfolioProject } from '~/types/project'
 defineProps<{ project: PortfolioProject; areaClass: string }>()
+const { onPointerMove, onPointerLeave } = useTilt()
 </script>
 
 <template>
-  <BentoCard :class="areaClass" :interactive="Boolean(project.projectUrl)">
+  <BentoCard class="tilt-card" :class="areaClass" :interactive="Boolean(project.projectUrl)" @pointermove="onPointerMove" @pointerleave="onPointerLeave">
     <component
       :is="project.projectUrl ? 'a' : 'div'"
       class="project-link absolute inset-0 block"

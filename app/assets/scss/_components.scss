@@ -16,6 +16,37 @@
     background: $color-card-hover;
     border-color: $color-border-strong;
   }
+
+  @media (hover: hover) and (pointer: fine) {
+    isolation: isolate;
+
+    &::before,
+    &::after {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      content: '';
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $transition-normal;
+    }
+
+    &::before {
+      z-index: -1;
+      background: radial-gradient(18rem circle at var(--mx, 50%) var(--my, 50%), var(--color-glow-fill), transparent 70%);
+    }
+
+    &::after {
+      padding: 1px;
+      background: radial-gradient(12rem circle at var(--mx, 50%) var(--my, 50%), var(--color-glow-edge), transparent 70%);
+      mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+    }
+  }
 }
 
 .card-pad {
@@ -23,6 +54,20 @@
 
   @include mobile-down {
     padding: 1.5rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tilt-card {
+    transition: background $transition-normal, border-color $transition-normal, transform 150ms ease-out;
+
+    &:hover {
+      transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    }
+
+    @include reduced-motion {
+      &:hover { transform: none; }
+    }
   }
 }
 
@@ -177,6 +222,10 @@
   border-radius: $radius-pill;
   transition: background $transition-normal;
 
+  &:active .theme-switch__thumb {
+    scale: 1.18 0.9;
+  }
+
   &__thumb {
     position: absolute;
     top: 0.25rem;
@@ -188,7 +237,7 @@
     color: $color-page;
     background: $color-accent;
     border-radius: $radius-pill;
-    transition: transform $transition-normal;
+    transition: transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1), scale 160ms ease-out;
   }
 
   &[aria-checked='false'] &__thumb {
@@ -243,4 +292,66 @@
   min-height: 1.25rem;
   color: $color-text-muted;
   font-size: $font-size-feedback;
+}
+
+.icon-pop {
+  display: inline-grid;
+  animation: icon-pop 360ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+@keyframes icon-pop {
+  from {
+    opacity: 0;
+    scale: 0.4;
+    rotate: -30deg;
+  }
+}
+
+.sweep-button {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 30%, var(--color-glow-edge) 50%, transparent 70%);
+    content: '';
+    opacity: 0.35;
+    pointer-events: none;
+    translate: -100% 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover::after {
+      translate: 100% 0;
+      transition: translate 700ms ease;
+    }
+
+    @include reduced-motion {
+      &:hover::after { transition: none; }
+    }
+  }
+}
+
+.bento-grid > :is(.bento-card, .social-grid) {
+  animation: card-enter 1100ms cubic-bezier(0.33, 0, 0.2, 1) backwards;
+
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) { animation-delay: #{$i * 60}ms; }
+  }
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    scale: 0.985;
+  }
 }

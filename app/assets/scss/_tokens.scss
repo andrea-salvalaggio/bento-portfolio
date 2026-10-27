@@ -13,6 +13,8 @@
   --color-border-strong: rgb(255 255 255 / 16%);
   --color-accent: #f2d9a6;
   --color-stack-tile: #0d0d0d;
+  --color-glow-fill: rgb(255 255 255 / 5%);
+  --color-glow-edge: rgb(255 255 255 / 45%);
 
   --font-sans: #{$font-sans};
   --radius-card: #{$radius-card};
@@ -35,4 +37,6 @@
   --color-border-strong: rgb(0 0 0 / 16%);
   --color-accent: #b9791a;
   --color-stack-tile: #f3f1ec;
+  --color-glow-fill: rgb(0 0 0 / 4%);
+  --color-glow-edge: rgb(0 0 0 / 30%);
 }
