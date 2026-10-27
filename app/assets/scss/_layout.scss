@@ -153,5 +153,17 @@
 
     .bento-grid>.area-portfolio {
         min-height: 12rem;
+
+        .project-link {
+            position: relative;
+            inset: auto;
+            min-height: 12rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    .bento-grid>.area-stack {
+        min-height: 0;
+        height: auto;
     }
 }
