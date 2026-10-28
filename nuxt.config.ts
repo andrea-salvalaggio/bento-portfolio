@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap', media: 'print', onload: "this.media='all'" },
       ],
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
