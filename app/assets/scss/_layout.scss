@@ -12,7 +12,6 @@
 
 .portfolio-frame {
     width: min(100%, $layout-max-width);
-    height: calc(100dvh - var(--page-pad) * 2);
     min-height: 44rem;
 }
 
